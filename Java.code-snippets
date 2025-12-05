@@ -1,0 +1,253 @@
+{
+  // ==========================
+  // A-1：最小 Main テンプレ
+  // ==========================
+  "Main Basic Template": {
+    "prefix": "main",
+    "body": [
+      "package com.example;",
+      "",
+      "public class Main {",
+      "    public static void main(String[] args) {",
+      "        ${0}",
+      "    }",
+      "}"
+    ],
+    "description": "最小構成の Java メインテンプレート"
+  },
+
+  // ==========================
+  // for(i,n) → for文自動展開
+  // ==========================
+  "for_i_n snippet": {
+    "prefix": "for(i,n)",
+    "body": [
+      "for (int i = 0; i < ${1:n}; i++) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "for(i,n) → for(int i=0;i<n;i++)"
+  },
+
+  "while snippet": {
+    "prefix": "while()",
+    "body": [
+    "while (条件式){",
+    "// 繰り返しの中で実行される処理",
+   "}" 
+    ],
+    "description": "while文のスニペット"
+  },
+  // ==========================
+  // if 文
+  // ==========================
+  "if basic": {
+    "prefix": "ifb",
+    "body": [
+      "if (${1:condition}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "基本の if 文"
+  },
+
+  // else if / else
+  "if else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condition}) {",
+      "    ${2}",
+      "} else if (${3:condition}) {",
+      "    ${4}",
+      "} else {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "if → else if → else"
+  },
+
+  // ==========================
+  // switch（古い構文）
+  // ==========================
+  "switch basic": {
+    "prefix": "switchb",
+    "body": [
+      "switch (${1:value}) {",
+      "    case ${2:A}:",
+      "        ${3}",
+      "        break;",
+      "    case ${4:B}:",
+      "        ${5}",
+      "        break;",
+      "    default:",
+      "        ${0}",
+      "}"
+    ],
+    "description": "基本の switch 文"
+  },
+
+  // ==========================
+  // switch（Java17 以降の → 付き構文）
+  // ==========================
+  "switch modern": {
+    "prefix": "switchm",
+    "body": [
+      "switch (${1:value}) {",
+      "    case ${2:A} -> ${3:処理};",
+      "    case ${4:B} -> ${5:処理};",
+      "    default -> ${0:処理};",
+      "}"
+    ],
+    "description": "Java17 以降の switch 式"
+  },
+
+  // ==========================
+  // while 文
+  // ==========================
+  "while": {
+    "prefix": "wh",
+    "body": [
+      "while (${1:condition}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "while ループ"
+  },
+
+  // ==========================
+  // do-while 文
+  // ==========================
+  "dowhile": {
+    "prefix": "dw",
+    "body": [
+      "do {",
+      "    ${0}",
+      "} while (${1:condition});"
+    ],
+    "description": "do-while ループ"
+  },
+
+  // ==========================
+  // 継承 extends
+  // ==========================
+  "extends": {
+    "prefix": "ext",
+    "body": [
+      "class ${1:Child} extends ${2:Parent} {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "継承（extends）"
+  },
+
+  // ==========================
+  // @Override
+  // ==========================
+  "override": {
+    "prefix": "ovr",
+    "body": [
+      "@Override",
+      "public ${1:void} ${2:methodName}(${3}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "@Override メソッド"
+  },
+
+  // ==========================
+  // コンストラクタ
+  // ==========================
+  "constructor": {
+    "prefix": "ctor",
+    "body": [
+      "public ${1:ClassName}(${2}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "コンストラクタ"
+  },
+
+  // ==========================
+  // static メソッド
+  // ==========================
+  "static method": {
+    "prefix": "sm",
+    "body": [
+      "static ${1:int} ${2:method}(${3}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "static メソッド"
+  },
+
+  // ==========================
+  // インスタンスメソッド
+  // ==========================
+  "instance method": {
+    "prefix": "im",
+    "body": [
+      "public ${1:int} ${2:method}(${3}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "インスタンスメソッド"
+  },
+
+  // ==========================
+  // interface
+  // ==========================
+  "interface": {
+    "prefix": "inf",
+    "body": [
+      "interface ${1:Name} {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "インターフェイス定義"
+  },
+
+  // ==========================
+  // implements
+  // ==========================
+  "implements": {
+    "prefix": "imp",
+    "body": [
+      "class ${1:ClassName} implements ${2:InterfaceName} {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "implements（インターフェイス実装）"
+  },
+
+  // ==========================
+  // 抽象クラス
+  // ==========================
+  "abstract": {
+    "prefix": "abs",
+    "body": [
+      "abstract class ${1:Base} {",
+      "    abstract ${2:void} ${3:method}(${4});",
+      "    ${0}",
+      "}"
+    ],
+    "description": "抽象クラス"
+  },
+
+  // ==========================
+  // メソッドのオーバーロード
+  // ==========================
+  "overload": {
+    "prefix": "ovl",
+    "body": [
+      "public ${1:int} ${2:method}(${3:int a}) {",
+      "    ${0}",
+      "}",
+      "",
+      "public ${1:int} ${2:method}(${4:int a, int b}) {",
+      "    ",
+      "}"
+    ],
+    "description": "メソッドオーバーロード"
+  }
+}
+
